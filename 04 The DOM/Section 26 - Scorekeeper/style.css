@@ -1,0 +1,52 @@
+* {
+    font-family: 'Secular One', sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+
+main {
+    width: 85%;
+    margin: auto;
+    height: 80vh;
+    border-radius: 10px;
+    background-color: aqua;
+    text-align: center;
+}
+
+header {
+    padding: 50px;
+    margin: auto;
+}
+
+.containerPuntajes {
+    width: 80%;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#p1Container,
+#p2Container {
+    width: 45%;
+    background-color: green;
+    border-radius: 10px;
+}
+
+#p1Container p,
+#p2Container p {
+    color: white;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#p2Container {
+    background-color: red;
+}
+
+button {
+    display: block;
+    width: 75%;
+    margin: 50px auto;
+}

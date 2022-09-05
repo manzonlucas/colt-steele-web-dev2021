@@ -1,0 +1,27 @@
+body {
+    background-color: #f1faee;
+}
+
+h1, h2 {
+    color: #1D3557;
+}
+
+button {
+    background-color: #a8dadc;
+}
+
+#signup {
+    background-color: #e63946;
+}
+
+.tag {
+    background-color: #e63946;
+    text-decoration: underline;
+    font-size: 16px;
+    color: #f1faee;
+    letter-spacing: 2px;
+}
+
+li a {
+    font-size: 20px;
+}

@@ -1,0 +1,70 @@
+body {
+    color: #d0d0d0;
+    background-color: black;
+}
+
+h1 {
+    color: #c31010;
+    background-color: black;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+
+h2 {
+    color: #c31010;
+    background-color: #2b2b2b;
+    text-decoration: underline;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+table {
+    font-size: 26px;
+    padding: 10px;
+}
+
+td,
+th {
+    text-align: center;
+    border: 2px solid white;
+    padding: 6px;
+}
+
+th {
+    background-color: #465b5e;
+}
+
+form label:hover {
+    background-color: #c31010;
+}
+
+#submit {
+    font-size: 30px;
+}
+
+#submit:active {
+    background-color: #c31010;
+}
+
+footer {
+    text-align: center;
+}
+
+footer a {
+    color: #d0d0d0;
+    font-size: 20px;
+}
+
+#circulo {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    border-radius: 233%;
+}
+
+body {
+    background-image: url(file:///C:/Users/Lucas/Desktop/Programacion/The%20Web%20Developer%20Bootcamp%202021/anotherchance/background.jpg);
+}

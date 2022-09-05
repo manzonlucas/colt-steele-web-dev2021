@@ -1,0 +1,30 @@
+html {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+nav {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    background-color: white;
+    border-bottom: 2px solid #f1f1f1;
+    margin-left: calc(10%/6);
+    padding: 1em 0em;
+    position: sticky;
+    top: 0px;
+}
+
+
+img {
+    width: 30%;
+    margin: calc(10%/6);
+}
+
+img:hover {
+    transform: scale(1.05);
+    transition: 0.25s;
+    box-shadow: 0px 5px 5px -1px;
+}

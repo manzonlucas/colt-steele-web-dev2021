@@ -1,0 +1,9 @@
+footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+a {
+    list-style: none;
+}

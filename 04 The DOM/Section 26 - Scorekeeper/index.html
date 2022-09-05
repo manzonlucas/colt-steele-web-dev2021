@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <title>Scorekeeper</title>
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+            <h1>Scorekeeper</h1>
+
+            <label for="sport">Select the sport:</label>
+            <select name="sport" id="sport">
+                <option value="football">Soccer</option>
+                <option value="basket">Basket</option>
+                <option value="pingPong">Ping-pong</option>
+            </select>
+
+            <br>
+
+            <label for="scoreSetter">Choose the score needed to win:</label>
+            <select name="scoreSetter" id="scoreSetter">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </header>
+
+        <section class="containerPuntajes">
+            <div id="p1Container">
+                <p>Player 1: <span id="p1Display">0</span></p>
+                <button id="p1ChangeName">Set team name</button>
+                <button id="p1ChangeColor">Select team color</button>
+                <button id="p1Scores">SCORE!</button>
+            </div>
+            <div id="p2Container">
+                <p>Player 2: <span id="p2Display">0</span></p>
+                <button id="p1ChangeName">Set team name</button>
+                <button id="p1ChangeColor">Select team color</button>
+                <button id="p2Scores">SCORE!</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

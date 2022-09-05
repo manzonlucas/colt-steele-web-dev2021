@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripcion a maraton</title>
+</head>
+
+<body>
+    <h1>Registro para la maraton</h1>
+    <form action="/marathon">
+        <p>
+        <h2>Datos personales:</h2>
+        <label for="name">Cual es su nombre?</label>
+        <input type="text" name="name" id="name" placeholder="ingrese aqui su nombre" required>
+        </p>
+        <p>
+            <label for="surname">Cual es su apellido?</label>
+            <input type="text" name="surname" id="surname" placeholder="ingrese aqui su apellido" required>
+        </p>
+
+        <h2>Seleccione la maraton:</h2>
+        <p>
+            <label for="5k">5 kilometros</label>
+            <input type="radio" name="race" id="5k" value="5k">
+        </p>
+        <p>
+            <label for="10k">10 kilometros</label>
+            <input type="radio" name="race" id="10k" value="10k">
+        </p>
+        <p>
+            <label for="20k">20 kilometros</label>
+            <input type="radio" name="race" id="20k" value="20k">
+        </p>
+        <h2>Rango etario</h2>
+        <label for="age">Seleccione el rango etario al que pertenece y en el cual va a competir</label>
+        <select name="age" id="age" required>
+            <option value="">Seleccione su rango etario</option>
+            <option value="18_25">18 a 25 años</option>
+            <option value="25_40">25 a 40 años</option>
+            <option value="40">Mayores de 40 años</option>
+        </select>
+        <p>
+        <h2>Datos de contacto:</h2>
+        <label for="email">Ingrese su email:</label>
+        <input type="email" name="email" id="email" placeholder="ejemplo@ejemplo.com" required>
+        <label for="password">Ingrese su contraseña:</label>
+        <input type="password" name="password" id="password">
+        </p>
+
+        <button type="submit">Registrarse!</button>
+    </form>
+</body>
+
+</html>
