@@ -26,6 +26,18 @@ app.get('/dogs', (req, res) => {
   res.send('woof')
 })
 
+// GET: path parameter
+app.get('/r/:subreddit', (req, res) => {
+  const { subreddit } = req.params;
+  res.send(`Hey! This is the ${subreddit} subreddit`)
+})
+
+// GET: more than 1 path parameter
+app.get('/r/:subreddit/:postId', (req, res) => {
+  const { subreddit, postId } = req.params;
+  res.send(`Hey! This is the post ID: ${postId} on the ${subreddit} subreddit`)
+})
+
 // POSTs
 app.post('/cats', (req, res) => {
   res.send('This is a post request to /cats')
