@@ -1,4 +1,3 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -6,14 +5,17 @@ const baseUrl = 'http://localhost:9000';
 
 function App() {
 
-  const [response, setResponse] = useState(null);
+  const [comments, setComments] = useState([]);
+  const [inputData, setInputData] = useState({});
 
-  const [data, setData] = useState({});
+  useEffect(() => {
+    fetchComments();
+  }, [])
 
   async function fetchComments() {
     const response = await fetch(`${baseUrl}/comments`)
     const data = await response.json();
-    setResponse(data);
+    setComments(data);
   }
 
   async function postComment(payload) {
@@ -27,41 +29,32 @@ function App() {
       .catch(error => {
         console.error(error);
       })
-    const data = await response.text()
-    console.log(data)
   }
 
-  useEffect(() => {
-    fetchComments();
-  }, [])
-
-  function submitHandler(e) {
+  async function submitHandler(e) {
     e.preventDefault();
     console.log('submitting...');
-    postComment(data);
+    await postComment(inputData);
+    fetchComments();
   }
 
   function changeHandler(e) {
     const value = e.target.value
     const id = e.target.id;
-    setData({ ...data, [id]: value })
+    setInputData({ ...inputData, [id]: value })
   }
 
   return (
     <>
       <main>
-        <h1>Home!</h1>
         <h2>List of comments:</h2>
-        {response ?
-          response.map((item, index) => {
-            return (
-              <div key={index}>
-                <p>{item.comment} / <b>{item.username}</b></p>
-              </div>
-            )
-          })
-          : 'false'
-        }
+        {comments.map((item, index) => {
+          return (
+            <div key={index}>
+              <p>{item.comment} / <b>{item.username}</b></p>
+            </div>
+          )
+        })}
 
         <h2>Add a comment:</h2>
         <form onSubmit={submitHandler}>

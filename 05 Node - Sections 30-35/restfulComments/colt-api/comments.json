@@ -1,22 +1,22 @@
 [
   {
     "id": "1",
-    "comment": "Hola soy gorje",
-    "username": "Gorje"
+    "username": "Gorje",
+    "comment": "Hola soy gorje"
   },
   {
     "id": "2",
-    "comment": "Hola soy Lucas",
-    "username": "Lucas"
+    "username": "Lucas",
+    "comment": "Hola soy Lucas"
   },
   {
     "id": "3",
-    "comment": "Sale un cs?",
-    "username": "Empachado97"
+    "username": "Empachado97",
+    "comment": "Sale un cs?"
   },
   {
     "id": "4",
-    "comment": "Como hacer un lemon pie ahre",
-    "username": "Marta"
+    "username": "Marta",
+    "comment": "Como hacer un lemon pie ahre"
   }
 ]
