@@ -8,29 +8,70 @@ function App() {
 
   const [response, setResponse] = useState(null);
 
-  async function callAPI() {
-    const response = await fetch("http://localhost:9000/testAPI")
+  const [data, setData] = useState({});
+
+  async function fetchComments() {
+    const response = await fetch(`${baseUrl}/comments`)
     const data = await response.json();
     setResponse(data);
   }
 
+  async function postComment(payload) {
+    const response = await fetch(`${baseUrl}/comments`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload)
+    })
+      .catch(error => {
+        console.error(error);
+      })
+    const data = await response.text()
+    console.log(data)
+  }
+
   useEffect(() => {
-    callAPI();
+    fetchComments();
   }, [])
+
+  function submitHandler(e) {
+    e.preventDefault();
+    console.log('submitting...');
+    postComment(data);
+  }
+
+  function changeHandler(e) {
+    const value = e.target.value
+    const id = e.target.id;
+    setData({ ...data, [id]: value })
+  }
 
   return (
     <>
-      <h1>Home!</h1>
-      {response ?
-        response.map(item => {
-          return (
-            <div>
-              <p>{item.comment} / <b>{item.username}</b></p>
-            </div>
-          )
-        })
-        : 'false'
-      }
+      <main>
+        <h1>Home!</h1>
+        <h2>List of comments:</h2>
+        {response ?
+          response.map((item, index) => {
+            return (
+              <div key={index}>
+                <p>{item.comment} / <b>{item.username}</b></p>
+              </div>
+            )
+          })
+          : 'false'
+        }
+
+        <h2>Add a comment:</h2>
+        <form onSubmit={submitHandler}>
+          <label htmlFor="username">Username:</label>
+          <input type="text" name="username" id="username" onChange={changeHandler} />
+          <label htmlFor="comment">Your comment:</label>
+          <input type="text" name="comment" id="comment" onChange={changeHandler} />
+          <button>Submit</button>
+        </form>
+      </main>
     </>
   )
 }
