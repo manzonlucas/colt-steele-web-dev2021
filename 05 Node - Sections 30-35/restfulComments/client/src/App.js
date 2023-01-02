@@ -33,9 +33,9 @@ function App() {
 
   async function submitHandler(e) {
     e.preventDefault();
-    console.log('submitting...');
     await postComment(inputData);
     fetchComments();
+    e.target.reset();
   }
 
   function changeHandler(e) {
