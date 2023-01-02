@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "username": "Gorje",
-    "comment": "Hola soy gorje"
+    "username": "Jorge",
+    "comment": "Hola soy Jorgito"
   },
   {
     "id": "2",
@@ -17,6 +17,6 @@
   {
     "id": "4",
     "username": "Marta",
-    "comment": "Como hacer un lemon pie ahre"
+    "comment": "Como hacer un lemon pie"
   }
 ]
