@@ -36,12 +36,30 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   console.log('Hey! Second middleware here. Im going to call next() so the following function runs...');
   // if we dont use return, anything after the next() will run eventually.
-  // so, to avoid it, it is a good practice to end the middleware with return:
+  // so, to avoid it, it is a good practice to end the middleware with return so nothing happens after next().
   return next();
   console.log('thanks to return, this code is unreachable :(');
 })
 
+// middlewares can access the request BEFORE the route handlers, being able to adding info or modifying it.
+app.use((req, res, next) => {
+  console.log('Custom middleware accessing request:');
+  console.log(`method: ${req.method}`);
+  console.log(`path: ${req.path}`);
+
+  // adding data
+  req.requestDate = Date.now();
+  return next();
+})
+
+// we can set the route where the middleware triggers:
+app.use('/dogs', (req, res, next) => {
+  console.log('I love dogs!');
+  return next();
+})
 
 app.get('/', (req, res) => {
+  // accessing data added on the middleware:
+  console.log(`REQUEST DATE: ${req.requestDate}`);
   res.send('Hi! This is home.');
 })
