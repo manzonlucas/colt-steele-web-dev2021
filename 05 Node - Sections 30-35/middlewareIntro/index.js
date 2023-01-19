@@ -68,6 +68,29 @@ app.get('/dogs', (req, res, next) => {
   res.send('Dogs body!')
 })
 
+// we define a middleware as a function
+function authenticateQuery(req, res, next) {
+  const { password } = req.query;
+  // passing the query string as follows:
+  // http://localhost:9000/secret?password=golden
+  if (password === 'golden') {
+    // if the query is correct, continue with the NEXT action of the route handler.
+    next();
+  }
+  else {
+    // if not, end the cycle by sending a response:
+    res.send('Sorry, input the correct password.')
+  }
+}
+
+// 1st param: route
+// 2nd param: callback the middleware
+// 3rd param: the route handler to be called IF the middleware gives the order by calling NEXT()
+app.get('/secret', authenticateQuery, (req, res, next) => {
+  res.send('Oh you guess the password, ok heres my secret...')
+})
+
+
 // if any route BEFORE matches with the request, this will run:
 app.use((req, res) => {
   // we can return the corresponding status:
