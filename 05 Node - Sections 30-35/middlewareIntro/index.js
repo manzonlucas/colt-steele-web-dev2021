@@ -52,14 +52,24 @@ app.use((req, res, next) => {
   return next();
 })
 
-// we can set the route where the middleware triggers:
-app.use('/dogs', (req, res, next) => {
-  console.log('I love dogs!');
-  return next();
-})
-
 app.get('/', (req, res) => {
   // accessing data added on the middleware:
   console.log(`REQUEST DATE: ${req.requestDate}`);
   res.send('Hi! This is home.');
+})
+
+// we can set the route where the middleware triggers:
+app.use('/dogs', (req, res, next) => {
+  console.log('Middleware here, I love dogs!');
+  return next();
+})
+
+app.get('/dogs', (req, res, next) => {
+  res.send('Dogs body!')
+})
+
+// if any route BEFORE matches with the request, this will run:
+app.use((req, res) => {
+  // we can return the corresponding status:
+  res.status(404).send('Not found')
 })
